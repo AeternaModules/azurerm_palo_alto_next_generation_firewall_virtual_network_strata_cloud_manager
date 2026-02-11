@@ -40,8 +40,8 @@ EOT
     name                             = string
     resource_group_name              = string
     strata_cloud_manager_tenant_name = string
-    marketplace_offer_id             = optional(string, "pan_swfw_cloud_ngfw")
-    plan_id                          = optional(string, "panw-cngfw-payg")
+    marketplace_offer_id             = optional(string) # Default: "pan_swfw_cloud_ngfw"
+    plan_id                          = optional(string) # Default: "panw-cngfw-payg"
     tags                             = optional(map(string))
     network_profile = object({
       egress_nat_ip_address_ids = optional(list(string))
@@ -67,7 +67,7 @@ EOT
     }))
     dns_settings = optional(object({
       dns_servers   = optional(list(string))
-      use_azure_dns = optional(bool, false)
+      use_azure_dns = optional(bool) # Default: false
     }))
     identity = optional(object({
       identity_ids = set(string)
