@@ -1,3 +1,7 @@
+output "palo_alto_next_generation_firewall_virtual_network_strata_cloud_managers_id" {
+  description = "Map of id values across all palo_alto_next_generation_firewall_virtual_network_strata_cloud_managers, keyed the same as var.palo_alto_next_generation_firewall_virtual_network_strata_cloud_managers"
+  value       = { for k, v in azurerm_palo_alto_next_generation_firewall_virtual_network_strata_cloud_manager.palo_alto_next_generation_firewall_virtual_network_strata_cloud_managers : k => v.id }
+}
 output "palo_alto_next_generation_firewall_virtual_network_strata_cloud_managers_destination_nat" {
   description = "Map of destination_nat values across all palo_alto_next_generation_firewall_virtual_network_strata_cloud_managers, keyed the same as var.palo_alto_next_generation_firewall_virtual_network_strata_cloud_managers"
   value       = { for k, v in azurerm_palo_alto_next_generation_firewall_virtual_network_strata_cloud_manager.palo_alto_next_generation_firewall_virtual_network_strata_cloud_managers : k => v.destination_nat }
